@@ -1,0 +1,94 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "size": "Small",
+          "text": "FAQ Bot",
+          "isSubtle": true
+        },
+        {
+          "type": "TextBlock",
+          "spacing": "None",
+          "weight": "Bolder",
+          "text": "Hi There!",
+          "isSubtle": true
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "spacing": "None",
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sophia_at_the_AI_for_Good_Global_Summit_2018_%2827254369347%29_%28cropped%29.jpg/220px-Sophia_at_the_AI_for_Good_Global_Summit_2018_%2827254369347%29_%28cropped%29.jpg",
+                  "size": "Small"
+                }
+              ],
+              "width": "auto"
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "horizontalAlignment": "Left",
+                  "size": "Small",
+                  "weight": "Bolder",
+                  "text": "Hello!   \nI am Sophia I am your friendly HR BOT. I am here to help you with your HR realted topics.",
+                  "wrap": true
+                }
+              ],
+              "width": "auto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Left",
+          "spacing": "None",
+          "weight": "Bolder",
+          "color": "Dark",
+          "text": "Here is what I can help you with:",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Left",
+          "spacing": "None",
+          "color": "Dark",
+          "text": "- 401k\r- Travel Benifits\r-  Leave Policy\r- Health Benifits",
+          "wrap": true
+        },
+
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Left",
+          "spacing": "None",
+          "color": "Dark",
+          "text": "If you are curious about what I can do, just type @FAQBot and I will present the list of commands that I can understand.",
+          "wrap": true
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Take a Tour",
+      "data": "Take a Tour"
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}

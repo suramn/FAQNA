@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FAQNABOT", "FAQNABOT.csproj", "{9C7FF0E2-1195-4AAB-9AA5-E33A2302D355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAQNAUnitTest", "..\FAQNAUnitTest\FAQNAUnitTest.csproj", "{7566D358-F290-4A11-ADFF-889D7296FB4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C7FF0E2-1195-4AAB-9AA5-E33A2302D355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7FF0E2-1195-4AAB-9AA5-E33A2302D355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7FF0E2-1195-4AAB-9AA5-E33A2302D355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7FF0E2-1195-4AAB-9AA5-E33A2302D355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7566D358-F290-4A11-ADFF-889D7296FB4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7566D358-F290-4A11-ADFF-889D7296FB4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7566D358-F290-4A11-ADFF-889D7296FB4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7566D358-F290-4A11-ADFF-889D7296FB4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3EF5F1E-1A5B-4492-AF71-B5696EC5A2E8}
+	EndGlobalSection
+EndGlobal
