@@ -12240,7 +12240,8 @@
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.Bot.Builder.Integration.AspNet.Core >= 4.4.3",
       "Microsoft.NETCore.App >= 2.1.0",
-      "StyleCopPlus.MSBuild >= 4.7.49.5"
+      "StyleCopPlus.MSBuild >= 4.7.49.5",
+      "System.Threading.Tasks >= 4.3.0"
     ]
   },
   "packageFolders": {
@@ -12250,11 +12251,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\FAQNABOT.csproj",
+      "projectUniqueName": "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\FAQNABOT.csproj",
       "projectName": "FAQNABOT",
-      "projectPath": "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\FAQNABOT.csproj",
+      "projectPath": "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\FAQNABOT.csproj",
       "packagesPath": "C:\\Users\\v-nesura\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\obj\\",
+      "outputPath": "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12304,6 +12305,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[4.7.49.5, )"
+          },
+          "System.Threading.Tasks": {
+            "target": "Package",
+            "version": "[4.3.0, )"
           }
         },
         "imports": [

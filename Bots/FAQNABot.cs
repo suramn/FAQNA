@@ -12,13 +12,14 @@ using Microsoft.Bot.Schema;
 using Newtonsoft.Json;
 using System;
 using Microsoft.Bot;
+using FAQNABOT.AdaptiveCardHelpers;
 
 namespace FAQNABOT.Bots
 {
     public class FAQNABot : ActivityHandler
     {
-        private string _welcome = Path.Combine(".", "AdaptiveCards", "WelcomeCard.json");
-        private string _tour = Path.Combine(".", "AdaptiveCards", "TourCard.json");
+        private string _welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
+        private string _tour = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "TourCard.json");
 
         /// <summary>
         /// The method that gets invoked each time there is a message that is coming in
@@ -31,14 +32,14 @@ namespace FAQNABOT.Bots
         {
             string text = string.IsNullOrEmpty(turnContext.Activity.Text) ? string.Empty : turnContext.Activity.Text.ToLower();
 
-            string nextMessage = null;
+            Attachment nextMessage = null;
 
             if (!string.IsNullOrEmpty(text))
             {
                 nextMessage = await GetMessageFromText(turnContext,text);
             }
-
-            await turnContext.SendActivityAsync(MessageFactory.Attachment(CreateAdaptiveCardAttachment(nextMessage)));
+           
+            await turnContext.SendActivityAsync(MessageFactory.Attachment(nextMessage));
         }
         /// <summary>
         /// The method that gets invoked when the bot is first opened after installation
@@ -49,7 +50,7 @@ namespace FAQNABOT.Bots
         /// <returns>A unit of Execution</returns>
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
-            var cardAttachment = CreateAdaptiveCardAttachment(_welcome);
+            var cardAttachment = CreateWelcomeCardAttachment();
             foreach (var member in membersAdded)
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
@@ -64,25 +65,35 @@ namespace FAQNABOT.Bots
         ///<param name="filePath">Parses the Adaptive Card Json Path</param>
         /// <returns>The Welcome Adaptive card</returns>
 
-        private static Attachment CreateAdaptiveCardAttachment(string filePath)
+        private Attachment CreateWelcomeCardAttachment()
         {
-            var adaptiveCardJson = File.ReadAllText(filePath);
+            var adaptiveWelcomeCardJson = WelcomeCard.GetCard();
             var adaptiveCardAttachment = new Attachment()
             {
                 ContentType = "application/vnd.microsoft.card.adaptive",
-                Content = JsonConvert.DeserializeObject(adaptiveCardJson),
+                Content = JsonConvert.DeserializeObject(adaptiveWelcomeCardJson),
+            };
+            return adaptiveCardAttachment;
+        }
+        private Attachment CreateTourCardAttachment()
+        {
+            var adaptiveTourCardJson = File.ReadAllText(_tour);
+            var adaptiveCardAttachment = new Attachment()
+            {
+                ContentType = "application/vnd.microsoft.card.adaptive",
+                Content = JsonConvert.DeserializeObject(adaptiveTourCardJson),
             };
             return adaptiveCardAttachment;
         }
         /// <summary>
-        /// Sends the Appropriate Card to the user parsing the text
+        /// Sends the Appropriate Adaptive Card to the user parsing the text
         /// </summary>
         ///<param name="context">The current turn/execution flow</param>
         ///<param name="text">Parses the text from user conversation</param>
         /// <returns>Approrpriate Card</returns>
-        private async Task<string> GetMessageFromText(ITurnContext context, string text)
+        private async Task<Attachment> GetMessageFromText(ITurnContext context, string text)
         {
-            string nextMessage = null;
+            Attachment nextMessage = null;
 
             if (text == "hi"
                      || text == "hello"
@@ -91,14 +102,20 @@ namespace FAQNABOT.Bots
                      || text == "restart")
             {
                 //starts the conversation all over again from the welcome message, since the user has decided to restart the bot
-                nextMessage = await Task.Run(() => _welcome);
+                nextMessage = await Task.Run(() => CreateWelcomeCardAttachment());
             }
             else if(text.ToLower() == "take a tour")
             {
-                nextMessage = await Task.Run(() => _tour);
+                nextMessage = await Task.Run(() => CreateTourCardAttachment());
+            }
+            else
+            {
+                nextMessage = await Task.Run(() => CreateWelcomeCardAttachment());
+
             }
 
             return nextMessage;
         }
+       
     }
 }
