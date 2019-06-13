@@ -16,6 +16,7 @@ namespace FAQNABOT.AdaptiveCardHelpers
             var cardJsonFilePath = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
             CardTemplate = File.ReadAllText(cardJsonFilePath);
         }
+
         public static string GetCard()
         {
             var botName = Resource.BotName;
