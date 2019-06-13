@@ -1,26 +1,24 @@
-﻿using FAQNABOT.AdaptiveCardHelpers;
-using Microsoft.Bot.Schema;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using FAQNABOT.Bots;
-
+﻿// <copyright file="FAQNABotProvider.cs" company="Microsoft">
+// Copyright (c) Microsoft. All rights reserved.
+// </copyright>
 namespace FAQNABOT
 {
-    public  class FAQNABotProvider
+    using System.IO;
+    using FAQNABOT.AdaptiveCardHelpers;
+    using FAQNABOT.Bots;
+    using Microsoft.Bot.Schema;
+    using Newtonsoft.Json;
+
+    public class FAQNABotProvider
     {
-        private  string _welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
-        private  string _tour = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "TourCard.json");
+        private string welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
+        private string tour = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "TourCard.json");
 
         /// <summary>
-        /// Creates the adaptive card for the team welcome message
+        /// Creates the adaptive card for the team welcome message.
         /// </summary>
-        ///<param name="filePath">Parses the Adaptive Card Json Path</param>
-        /// <returns>The Welcome Adaptive card</returns>
-        public  Attachment CreateWelcomeCardAttachment()
+        /// <returns>The Welcome Adaptive card.</returns>
+        public Attachment CreateWelcomeCardAttachment()
         {
             var adaptiveWelcomeCardJson = WelcomeCard.GetCard();
             var adaptiveCardAttachment = new Attachment()
@@ -31,9 +29,13 @@ namespace FAQNABOT
             return adaptiveCardAttachment;
         }
 
-        public  Attachment CreateTourCardAttachment()
+        /// <summary>
+        /// Creates the adaptive card for Tour Functionality.
+        /// </summary>
+        /// <returns>The Tour Adaptive card.</returns>
+        public Attachment CreateTourCardAttachment()
         {
-            var adaptiveTourCardJson = File.ReadAllText(_tour);
+            var adaptiveTourCardJson = File.ReadAllText(this.tour);
             var adaptiveCardAttachment = new Attachment()
             {
                 ContentType = "application/vnd.microsoft.card.adaptive",

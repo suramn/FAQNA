@@ -1,22 +1,30 @@
-﻿using FAQNABOT.Properties;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿// <copyright file="WelcomeCard.cs" company="Microsoft">
+// Copyright (c) Microsoft. All rights reserved.
+// </copyright>
 
 namespace FAQNABOT.AdaptiveCardHelpers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using FAQNABOT.Properties;
+
     public class WelcomeCard
     {
-        public static string CardTemplate;
-        
+        private static string cardTemplate;
+
         static WelcomeCard()
         {
             var cardJsonFilePath = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
-            CardTemplate = File.ReadAllText(cardJsonFilePath);
+            cardTemplate = File.ReadAllText(cardJsonFilePath);
         }
 
+        /// <summary>
+        /// This method performs a function that helps with localisation using Resx.
+        /// </summary>
+        /// <returns>Card attachement as Json stirng.</returns>
         public static string GetCard()
         {
             var botName = Resource.BotName;
@@ -35,10 +43,10 @@ namespace FAQNABOT.AdaptiveCardHelpers
                 { "MessageText1", messageText1 },
                 { "BulletedList", bulletedList },
                 { "MessageText2", messageText2 },
-                { "TakeATourButtonText", takeATourButtonText }
+                { "TakeATourButtonText", takeATourButtonText },
             };
 
-            var cardBody = CardTemplate;
+            var cardBody = cardTemplate;
             foreach (var kvp in variablesToValues)
             {
                 cardBody = cardBody.Replace($"%{kvp.Key}%", kvp.Value);

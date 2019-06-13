@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "68eba3b73dceb1016d538153945bc2c43f2eca4c"
+    "signature": "e2820f86c78abdf8d357ebd9a6b9ae3ddf508477"
   },
   "compilationOptions": {
     "defines": [
@@ -17,7 +17,7 @@
     "optimize": false,
     "keyFile": "",
     "emitEntryPoint": true,
-    "xmlDoc": false,
+    "xmlDoc": true,
     "debugType": "portable"
   },
   "targets": {
@@ -27,7 +27,7 @@
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.Bot.Builder.Integration.AspNet.Core": "4.4.3",
           "Microsoft.NETCore.App": "2.1.0",
-          "StyleCopPlus.MSBuild": "4.7.49.5",
+          "StyleCop.Analyzers": "1.1.118",
           "System.Threading.Tasks": "4.3.0"
         },
         "runtime": {
@@ -412,12 +412,7 @@
         }
       },
       "SourceLink.Create.CommandLine/2.8.3": {},
-      "StyleCop.MSBuild/4.7.49": {},
-      "StyleCopPlus.MSBuild/4.7.49.5": {
-        "dependencies": {
-          "StyleCop.MSBuild": "4.7.49"
-        }
-      },
+      "StyleCop.Analyzers/1.1.118": {},
       "System.Collections.NonGeneric/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -3490,19 +3485,12 @@
       "path": "sourcelink.create.commandline/2.8.3",
       "hashPath": "sourcelink.create.commandline.2.8.3.nupkg.sha512"
     },
-    "StyleCop.MSBuild/4.7.49": {
+    "StyleCop.Analyzers/1.1.118": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8dGQFu8rbUKhjdgG3/6K8oPZ/MhFv88pl01VkG6kQSPZMQzgXTXUXfog8hSe2tySDgt7SyUpR1QlGGqbGujmRA==",
-      "path": "stylecop.msbuild/4.7.49",
-      "hashPath": "stylecop.msbuild.4.7.49.nupkg.sha512"
-    },
-    "StyleCopPlus.MSBuild/4.7.49.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-o/ZqA7vupCwc+urvtQdEgTJwu6SftXMUoQuqeLK2gj3qBfE3y8Sz0cTgWZHpeWW3KmuOWNq8LMN+HRZH8q42cA==",
-      "path": "stylecopplus.msbuild/4.7.49.5",
-      "hashPath": "stylecopplus.msbuild.4.7.49.5.nupkg.sha512"
+      "sha512": "sha512-Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw==",
+      "path": "stylecop.analyzers/1.1.118",
+      "hashPath": "stylecop.analyzers.1.1.118.nupkg.sha512"
     },
     "System.Collections.NonGeneric/4.3.0": {
       "type": "package",
