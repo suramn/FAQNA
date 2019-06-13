@@ -7,14 +7,14 @@
         {
           "type": "TextBlock",
           "size": "Small",
-          "text": "FAQ Bot",
+          "text": "%BotName%",
           "isSubtle": true
         },
         {
           "type": "TextBlock",
           "spacing": "None",
           "weight": "Bolder",
-          "text": "Hi There!",
+          "text": "%WelcomeText1%",
           "isSubtle": true
         },
         {
@@ -40,7 +40,7 @@
                   "horizontalAlignment": "Left",
                   "size": "Small",
                   "weight": "Bolder",
-                  "text": "Hello!   \nI am Sophia I am your friendly HR BOT. I am here to help you with your HR realted topics.",
+                  "text": "%WelcomeText2%",
                   "wrap": true
                 }
               ],
@@ -59,7 +59,7 @@
           "spacing": "None",
           "weight": "Bolder",
           "color": "Dark",
-          "text": "Here is what I can help you with:",
+          "text": "%MessageText1%",
           "wrap": true
         },
         {
@@ -67,7 +67,7 @@
           "horizontalAlignment": "Left",
           "spacing": "None",
           "color": "Dark",
-          "text": "- 401k\r- Travel Benifits\r-  Leave Policy\r- Health Benifits",
+          "text": "%BulletedList%",
           "wrap": true
         },
 
@@ -76,7 +76,7 @@
           "horizontalAlignment": "Left",
           "spacing": "None",
           "color": "Dark",
-          "text": "If you are curious about what I can do, just type @FAQBot and I will present the list of commands that I can understand.",
+          "text": "%MessageText2%",
           "wrap": true
         }
       ]
@@ -85,7 +85,7 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Take a Tour",
+      "title": "%TakeATourButtonText%",
       "data": "Take a Tour"
     }
   ],

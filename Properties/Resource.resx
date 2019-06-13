@@ -117,32 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InstallMessageUnknownInstallerPart2" xml:space="preserve">
-    <value>I get to help you meet more people around your organization by randomly pairing you with someone new every week. You get to make more friends and learn about the people you work with. It's a win-win-*win* situation.</value>
-    <comment>Part 2 of the install message when the name of the installer is not known</comment>
-  </data>
-  <data name="InstallMessageUnknownInstallerPart3" xml:space="preserve">
-    <value>**To meet new people, just hang tight. I'll send you an invite soon.**</value>
-    <comment>Part 3 of the install message when the name of the installer is not known</comment>
-  </data>
-  <data name="SalutationTitleText" xml:space="preserve">
-    <value>Hi there!</value>
-    <comment>This is the text for the salutation in the adaptive cards when the bot is installed to a team and also when new users are added to the team</comment>
-  </data>
-  <data name="String1" xml:space="preserve">
+  <data name="BotName" xml:space="preserve">
     <value>FAQ Bot</value>
     <comment>Name of the BOT</comment>
   </data>
-  <data name="String2" xml:space="preserve">
-    <value>Hello!   \nI am Sophia I am your friendly HR BOT. I am here to help you with your HR realted topics.</value>
-    <comment>Explains What Bot it is.</comment>
-  </data>
-  <data name="String3" xml:space="preserve">
+  <data name="BulletedList" xml:space="preserve">
     <value>- 401k\r- Travel Benifits\r-  Leave Policy\r- Health Benifits</value>
-    <comment>Shows the Bullest list of Available Items.</comment>
+    <comment>Bullet List of Available Bot Services</comment>
+  </data>
+  <data name="MessageText1" xml:space="preserve">
+    <value>Here is what I can help you with:</value>
+    <comment>MessageLine</comment>
+  </data>
+  <data name="MessageText2" xml:space="preserve">
+    <value>If you are curious about what I can do, just type @FAQBot and I will present the list of commands that I can understand.</value>
+    <comment>Message Line to know more about the Bot Functionalities</comment>
   </data>
   <data name="TakeATourButtonText" xml:space="preserve">
     <value>Take a tour</value>
-    <comment>The text for the button which launches a tour when clicked</comment>
+    <comment>Action Button which gives Tour for Bot Functionalities.</comment>
+  </data>
+  <data name="WelcomeText1" xml:space="preserve">
+    <value>Hi there!</value>
+    <comment>Greeting Text of Adaptive Card</comment>
+  </data>
+  <data name="WelcomeText2" xml:space="preserve">
+    <value>Hello!   \nI am Sophia I am your friendly HR BOT. I am here to help you with your HR realted topics.</value>
+    <comment>Explains What Bot it is.</comment>
   </data>
 </root>

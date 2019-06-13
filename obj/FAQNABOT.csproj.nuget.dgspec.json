@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\FAQNABOT.csproj": {}
+    "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\FAQNABOT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\FAQNABOT.csproj": {
+    "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\FAQNABOT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\FAQNABOT.csproj",
+        "projectUniqueName": "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\FAQNABOT.csproj",
         "projectName": "FAQNABOT",
-        "projectPath": "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\FAQNABOT.csproj",
+        "projectPath": "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\FAQNABOT.csproj",
         "packagesPath": "C:\\Users\\v-nesura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\v-nesura\\source\\FAQNA\\FAQNABOT\\obj\\",
+        "outputPath": "C:\\Users\\v-nesura\\source\\repos\\FAQNA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,11 +56,15 @@
               "version": "[2.1.0, )",
               "autoReferenced": true
             },
-            "StyleCopPlus.MSBuild": {
+            "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[4.7.49.5, )"
+              "version": "[1.1.118, )"
+            },
+            "System.Threading.Tasks": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

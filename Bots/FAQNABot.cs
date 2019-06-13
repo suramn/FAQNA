@@ -1,55 +1,52 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
-//
+// <copyright file="FAQNABot.cs" company="Microsoft">
+// Copyright (c) Microsoft. All rights reserved.
+// </copyright>
 // Generated with Bot Builder V4 SDK Template for Visual Studio EchoBot v4.3.0
-
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Bot.Builder;
-using Microsoft.Bot.Schema;
-using Newtonsoft.Json;
-using System;
-using Microsoft.Bot;
 
 namespace FAQNABOT.Bots
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using FAQNABOT.AdaptiveCardHelpers;
+    using Microsoft.Bot.Builder;
+    using Microsoft.Bot.Schema;
+    using Newtonsoft.Json;
+
     public class FAQNABot : ActivityHandler
     {
-        private string _welcome = Path.Combine(".", "AdaptiveCards", "WelcomeCard.json");
-        private string _tour = Path.Combine(".", "AdaptiveCards", "TourCard.json");
-
         /// <summary>
-        /// The method that gets invoked each time there is a message that is coming in
+        /// The method that gets invoked each time there is a message that is coming in.
         /// </summary>
-        /// <param name="turnContext">The current turn</param>
-        /// <param name="cancellationToken">The cancellation token</param>
-        /// <returns>A unit of execution</returns>
-
+        /// <param name="turnContext">The current turn.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A unit of Execution.</returns>
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
             string text = string.IsNullOrEmpty(turnContext.Activity.Text) ? string.Empty : turnContext.Activity.Text.ToLower();
 
-            string nextMessage = null;
+            Attachment nextMessage = null;
 
             if (!string.IsNullOrEmpty(text))
             {
-                nextMessage = await GetMessageFromText(turnContext,text);
+                nextMessage = await this.GetMessageFromText(turnContext, text, cancellationToken);
             }
 
-            await turnContext.SendActivityAsync(MessageFactory.Attachment(CreateAdaptiveCardAttachment(nextMessage)));
+            await turnContext.SendActivityAsync(MessageFactory.Attachment(nextMessage));
         }
+
         /// <summary>
-        /// The method that gets invoked when the bot is first opened after installation
+        /// The method that gets invoked when the bot is first opened after installation.
         /// </summary>
-        /// <param name="membersAdded">The account that has been eiter added or interacting with the bot</param>
-        /// <param name="turnContext">The current turn/execution flow</param>
-        /// <param name="cancellationToken">The cancellation token</param>
-        /// <returns>A unit of Execution</returns>
+        /// <param name="membersAdded">The account that has been eiter added or interacting with the bot.</param>
+        /// <param name="turnContext">The current turn/execution flow.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A unit of Execution.</returns>
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
-            var cardAttachment = CreateAdaptiveCardAttachment(_welcome);
+            var faqnaBotProvider = new FAQNABotProvider();
+            var cardAttachment = faqnaBotProvider.CreateWelcomeCardAttachment();
             foreach (var member in membersAdded)
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
@@ -58,44 +55,36 @@ namespace FAQNABOT.Bots
                 }
             }
         }
-        /// <summary>
-        /// Creates the adaptive card for the team welcome message
-        /// </summary>
-        ///<param name="filePath">Parses the Adaptive Card Json Path</param>
-        /// <returns>The Welcome Adaptive card</returns>
 
-        private static Attachment CreateAdaptiveCardAttachment(string filePath)
-        {
-            var adaptiveCardJson = File.ReadAllText(filePath);
-            var adaptiveCardAttachment = new Attachment()
-            {
-                ContentType = "application/vnd.microsoft.card.adaptive",
-                Content = JsonConvert.DeserializeObject(adaptiveCardJson),
-            };
-            return adaptiveCardAttachment;
-        }
         /// <summary>
-        /// Sends the Appropriate Card to the user parsing the text
+        /// Sends the Appropriate Adaptive Card to the user parsing the text.
         /// </summary>
-        ///<param name="context">The current turn/execution flow</param>
-        ///<param name="text">Parses the text from user conversation</param>
-        /// <returns>Approrpriate Card</returns>
-        private async Task<string> GetMessageFromText(ITurnContext context, string text)
+        /// <param name="context">The current turn/execution flow.</param>
+        /// <param name="text">Parses the text from user conversation.</param>
+        /// <param name="cancellationToken">The cancellation Token.</param>
+        /// <returns>Approrpriate Card.</returns>
+        private async Task<Attachment> GetMessageFromText(ITurnContext context, string text, CancellationToken cancellationToken)
         {
-            string nextMessage = null;
-
+            Attachment nextMessage = null;
+            var faqnaBotProvider = new FAQNABotProvider();
             if (text == "hi"
                      || text == "hello"
                      || text == "reset"
                      || text == "start over"
                      || text == "restart")
             {
-                //starts the conversation all over again from the welcome message, since the user has decided to restart the bot
-                nextMessage = await Task.Run(() => _welcome);
+                // starts the conversation all over again from the welcome message,
+                // since the user has decided to restart the bot
+                nextMessage = await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment());
             }
-            else if(text.ToLower() == "take a tour")
+            else if (context.Activity.Text == "Take a Tour")
             {
-                nextMessage = await Task.Run(() => _tour);
+                nextMessage = await Task.Run(() => faqnaBotProvider.CreateTourCardAttachment());
+            }
+            else
+            {
+                await context.SendActivityAsync(MessageFactory.Text("Hey, I don't understand what you're saying, would you like to take a tour"), cancellationToken);
+                nextMessage = await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment());
             }
 
             return nextMessage;
