@@ -9,6 +9,9 @@ namespace FAQNABOT
     using Microsoft.Bot.Schema;
     using Newtonsoft.Json;
 
+    /// <summary>
+    ///  This is a Calss Provides logic for Card Attachments.
+    /// </summary>
     public class FAQNABotProvider
     {
         private string welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");

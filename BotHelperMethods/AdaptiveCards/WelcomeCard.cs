@@ -11,6 +11,9 @@ namespace FAQNABOT.AdaptiveCardHelpers
     using System.Threading.Tasks;
     using FAQNABOT.Properties;
 
+    /// <summary>
+    ///  This class process an Welcome Card function.
+    /// </summary>
     public class WelcomeCard
     {
         private static string cardTemplate;

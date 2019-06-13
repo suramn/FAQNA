@@ -20,6 +20,8 @@ C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.deps.json
 C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.runtimeconfig.json
 C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.runtimeconfig.dev.json
 C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.dll
+C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.pdb
+C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.xml
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.Properties.Resource.resources
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.csproj.GenerateResource.cache
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.csproj.CoreCompileInputs.cache
@@ -28,8 +30,6 @@ C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.RazorAssem
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.AssemblyInfoInputs.cache
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.AssemblyInfo.cs
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.RazorTargetAssemblyInfo.cache
-C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.pdb
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.dll
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.pdb
-C:\Users\v-nesura\source\repos\FAQNA\bin\Debug\netcoreapp2.1\FAQNABOT.xml
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.csprojAssemblyReference.cache

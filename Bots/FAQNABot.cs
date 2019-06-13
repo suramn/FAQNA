@@ -14,6 +14,9 @@ namespace FAQNABOT.Bots
     using Microsoft.Bot.Schema;
     using Newtonsoft.Json;
 
+    /// <summary>
+    ///  This Class Invokes all Bot Conversation functionalites.
+    /// </summary>
     public class FAQNABot : ActivityHandler
     {
         /// <summary>
