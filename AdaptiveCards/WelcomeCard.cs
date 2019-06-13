@@ -4,6 +4,9 @@
 
 namespace FAQNABOT.AdaptiveCardHelpers
 {
+    /// <summary>
+    /// The necessary class to generate the welcome card.
+    /// </summary>
     public class WelcomeCard
     {
     }
