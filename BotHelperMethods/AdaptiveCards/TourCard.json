@@ -15,9 +15,6 @@
             "type": "ColumnSet",
             "columns": [
               {
-                "type": "Column",
-                "width": "3",
-                "spacing": "none",
                 "items": [
                   {
                     "type": "ColumnSet",
@@ -67,7 +64,10 @@
                     "text": "Gig Harbor, WA 98335",
                     "spacing": "none"
                   }
-                ]
+                ],
+                "spacing": "none",
+                "type": "Column",
+                "width": "3"
               },
               {
                 "type": "Column",

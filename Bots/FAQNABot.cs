@@ -80,7 +80,7 @@ namespace FAQNABOT.Bots
                 // since the user has decided to restart the bot
                 nextMessage = await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment());
             }
-            else if (context.Activity.Text == "Take a Tour")
+            else if (context.Activity.Text == "Take a tour")
             {
                 nextMessage = await Task.Run(() => faqnaBotProvider.CreateTourCardAttachment());
             }
