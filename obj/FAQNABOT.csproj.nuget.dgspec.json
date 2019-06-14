@@ -41,6 +41,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "AdaptiveCards": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Bot.Builder.Community.Dialogs.FormFlow": {
+              "target": "Package",
+              "version": "[4.3.48, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",

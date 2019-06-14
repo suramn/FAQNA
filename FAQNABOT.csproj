@@ -6,10 +6,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Users\v-nesura\source\repos\FAQNA\FAQNABOT.xml</DocumentationFile>
-    <NoWarn>1701;1702;1591;1573;1712;SA1636;SA1600</NoWarn>
+    <NoWarn>1701;1702;1591;1573;1712;SA1636</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AdaptiveCards" Version="1.2.0" />
+    <PackageReference Include="Bot.Builder.Community.Dialogs.FormFlow" Version="4.3.48" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.4.3" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">

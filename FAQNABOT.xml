@@ -4,11 +4,21 @@
         <name>FAQNABOT</name>
     </assembly>
     <members>
+        <member name="T:FAQNABOT.AdaptiveCardHelpers.WelcomeCard">
+            <summary>
+             This class process an Welcome Card function.
+            </summary>
+        </member>
         <member name="M:FAQNABOT.AdaptiveCardHelpers.WelcomeCard.GetCard">
             <summary>
             This method performs a function that helps with localisation using Resx.
             </summary>
             <returns>Card attachement as Json stirng.</returns>
+        </member>
+        <member name="T:FAQNABOT.Bots.FAQNABot">
+            <summary>
+             This Class Invokes all Bot Conversation functionalites.
+            </summary>
         </member>
         <member name="M:FAQNABOT.Bots.FAQNABot.OnMessageActivityAsync(Microsoft.Bot.Builder.ITurnContext{Microsoft.Bot.Schema.IMessageActivity},System.Threading.CancellationToken)">
             <summary>
@@ -36,6 +46,42 @@
             <param name="cancellationToken">The cancellation Token.</param>
             <returns>Approrpriate Card.</returns>
         </member>
+        <member name="T:FAQNABOT.ConfigurationCredentialProvider">
+            <summary>
+             This class will have credentials for configring the application.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.ConfigurationCredentialProvider.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FAQNABOT.ConfigurationCredentialProvider"/> class.
+            </summary>
+            <param name="configuration">Configures the Bot Id.</param>
+            <returns>A unit of Execution.</returns>
+        </member>
+        <member name="T:FAQNABOT.Controllers.BotController">
+            <summary>
+            This is a Bot controller class includes all API's related to this Bot.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.Controllers.BotController.#ctor(Microsoft.Bot.Builder.Integration.AspNet.Core.IBotFrameworkHttpAdapter,Microsoft.Bot.Builder.IBot)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FAQNABOT.Controllers.BotController"/> class.
+            </summary>
+            <param name="adapter">Bot adapter.</param>
+            <param name="bot"> Bot Interface.</param>
+            <returns>A unit of Execution.</returns>
+        </member>
+        <member name="M:FAQNABOT.Controllers.BotController.PostAsync">
+            <summary>
+            Executing the Post Async method.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="T:FAQNABOT.FAQNABotProvider">
+            <summary>
+             This is a Calss Provides logic for Card Attachments.
+            </summary>
+        </member>
         <member name="M:FAQNABOT.FAQNABotProvider.CreateWelcomeCardAttachment">
             <summary>
             Creates the adaptive card for the team welcome message.
@@ -47,6 +93,24 @@
             Creates the adaptive card for Tour Functionality.
             </summary>
             <returns>The Tour Adaptive card.</returns>
+        </member>
+        <member name="T:FAQNABOT.Program">
+            <summary>
+            This a Prgram class for this Bot.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.Program.Main(System.String[])">
+            <summary>
+            Main Method.
+            </summary>
+            <param name="args">String of Arguments.</param>
+        </member>
+        <member name="M:FAQNABOT.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            This method will hit the Sartup Method to set up the complete bot services.
+            </summary>
+            <param name="args">String of Arguments.</param>
+            <returns>A unit of Execution.</returns>
         </member>
         <member name="T:FAQNABOT.Properties.Resource">
             <summary>
@@ -98,6 +162,35 @@
             <summary>
               Looks up a localized string similar to Hello!   \nI am Sophia I am your friendly HR BOT. I am here to help you with your HR realted topics..
             </summary>
+        </member>
+        <member name="T:FAQNABOT.Startup">
+            <summary>
+            This a Startup class for this Bot.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FAQNABOT.Startup"/> class.
+            </summary>
+            <param name="configuration">Startup Configuration.</param>
+        </member>
+        <member name="P:FAQNABOT.Startup.Configuration">
+            <summary>
+            Gets Interface Configurations.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"> Service Collection Interface.</param>
+        </member>
+        <member name="M:FAQNABOT.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">Application Builder.</param>
+            <param name="env">Hosting Environment.</param>
         </member>
     </members>
 </doc>
