@@ -4,11 +4,8 @@
 
 namespace FAQNABOT.AdaptiveCardHelpers
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
-    using System.Threading.Tasks;
     using FAQNABOT.Properties;
 
     /// <summary>

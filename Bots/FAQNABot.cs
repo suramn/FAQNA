@@ -6,13 +6,10 @@
 namespace FAQNABOT.Bots
 {
     using System.Collections.Generic;
-    using System.IO;
     using System.Threading;
     using System.Threading.Tasks;
-    using FAQNABOT.AdaptiveCardHelpers;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Schema;
-    using Newtonsoft.Json;
 
     /// <summary>
     ///  This Class Invokes all Bot Conversation functionalites.
@@ -29,14 +26,21 @@ namespace FAQNABOT.Bots
         {
             string text = string.IsNullOrEmpty(turnContext.Activity.Text) ? string.Empty : turnContext.Activity.Text.ToLower();
 
-            Attachment nextMessage = null;
+            List<Attachment> nextMessage = null;
 
             if (!string.IsNullOrEmpty(text))
             {
                 nextMessage = await this.GetMessageFromText(turnContext, text, cancellationToken);
             }
 
-            await turnContext.SendActivityAsync(MessageFactory.Attachment(nextMessage));
+            if (nextMessage.Count > 1)
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Carousel(nextMessage));
+            }
+            else
+            {
+                await turnContext.SendActivityAsync(MessageFactory.Attachment(nextMessage[0]));
+            }
         }
 
         /// <summary>
@@ -66,9 +70,9 @@ namespace FAQNABOT.Bots
         /// <param name="text">Parses the text from user conversation.</param>
         /// <param name="cancellationToken">The cancellation Token.</param>
         /// <returns>Approrpriate Card.</returns>
-        private async Task<Attachment> GetMessageFromText(ITurnContext context, string text, CancellationToken cancellationToken)
+        private async Task<List<Attachment>> GetMessageFromText(ITurnContext context, string text, CancellationToken cancellationToken)
         {
-            Attachment nextMessage = null;
+            List<Attachment> nextMessage = null;
             var faqnaBotProvider = new FAQNABotProvider();
             if (text == "hi"
                      || text == "hello"
@@ -78,16 +82,17 @@ namespace FAQNABOT.Bots
             {
                 // starts the conversation all over again from the welcome message,
                 // since the user has decided to restart the bot
-                nextMessage = await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment());
+                nextMessage = new List<Attachment>() { await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment()) };
             }
             else if (context.Activity.Text == "Take a tour")
             {
-                nextMessage = await Task.Run(() => faqnaBotProvider.CreateTourCardAttachment());
+                var carouselCards = new List<string>() { "carousel1", "carousel2", "carousel3" };
+                nextMessage = await Task.Run(() => faqnaBotProvider.CreateTourCardCarouselAttachment(carouselCards));
             }
             else
             {
                 await context.SendActivityAsync(MessageFactory.Text("Hey, I don't understand what you're saying, would you like to take a tour"), cancellationToken);
-                nextMessage = await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment());
+                nextMessage = new List<Attachment>() { await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment()) };
             }
 
             return nextMessage;

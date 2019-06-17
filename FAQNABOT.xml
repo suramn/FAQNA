@@ -4,6 +4,11 @@
         <name>FAQNABOT</name>
     </assembly>
     <members>
+        <member name="T:FAQNABOT.BotHelperMethods.AdaptiveCards.CarouselCard">
+            <summary>
+             This class process Carousel Tour Card function.
+            </summary>
+        </member>
         <member name="T:FAQNABOT.AdaptiveCardHelpers.WelcomeCard">
             <summary>
              This class process an Welcome Card function.
@@ -88,10 +93,11 @@
             </summary>
             <returns>The Welcome Adaptive card.</returns>
         </member>
-        <member name="M:FAQNABOT.FAQNABotProvider.CreateTourCardAttachment">
+        <member name="M:FAQNABOT.FAQNABotProvider.CreateTourCardCarouselAttachment(System.Collections.Generic.List{System.String})">
             <summary>
-            Creates the adaptive card for Tour Functionality.
+            Displays Carousel of Tour Cards.
             </summary>
+            <param name="cards">List of Carousel Cards.</param>
             <returns>The Tour Adaptive card.</returns>
         </member>
         <member name="T:FAQNABOT.Program">

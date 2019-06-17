@@ -1,0 +1,77 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "size": "Medium",
+          "weight": "Bolder",
+          "text": "FAQNA Bot"
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "Share Feedback",
+                  "wrap": true
+                }
+              ],
+              "width": "stretch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "We Would love to hear a feedback from you on how we have performed today.",
+          "wrap": true
+        },
+        {
+          "type": "Image",
+          "horizontalAlignment": "Left",
+          "spacing": "Small",
+          "url": "https://qulture.rocks/wp-content/uploads/2019/02/feedback.png",
+          "size": "Large"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.ShowCard",
+      "title": "Share Feedback",
+      "card": {
+        "type": "AdaptiveCard",
+        "style": "emphasis",
+        "body": [
+          {
+            "type": "Input.Date",
+            "id": "dueDate"
+          },
+          {
+            "type": "Input.Text",
+            "id": "comment",
+            "placeholder": "Add a comment",
+            "isMultiline": true
+          }
+        ],
+
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+      }
+    }
+
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}

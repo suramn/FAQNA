@@ -3,9 +3,9 @@
 // </copyright>
 namespace FAQNABOT
 {
+    using System.Collections.Generic;
     using System.IO;
     using FAQNABOT.AdaptiveCardHelpers;
-    using FAQNABOT.Bots;
     using Microsoft.Bot.Schema;
     using Newtonsoft.Json;
 
@@ -14,8 +14,7 @@ namespace FAQNABOT
     /// </summary>
     public class FAQNABotProvider
     {
-        private string welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
-        private string tour = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "TourCard.json");
+        private static string welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
 
         /// <summary>
         /// Creates the adaptive card for the team welcome message.
@@ -33,18 +32,27 @@ namespace FAQNABOT
         }
 
         /// <summary>
-        /// Creates the adaptive card for Tour Functionality.
+        /// Displays Carousel of Tour Cards.
         /// </summary>
+        /// <param name="cards">List of Carousel Cards.</param>
         /// <returns>The Tour Adaptive card.</returns>
-        public Attachment CreateTourCardAttachment()
+        public List<Attachment> CreateTourCardCarouselAttachment(List<string> cards)
         {
-            var adaptiveTourCardJson = File.ReadAllText(this.tour);
-            var adaptiveCardAttachment = new Attachment()
+            var carouselAttachments = new List<Attachment>();
+            foreach (var card in cards)
             {
-                ContentType = "application/vnd.microsoft.card.adaptive",
-                Content = JsonConvert.DeserializeObject(adaptiveTourCardJson),
-            };
-            return adaptiveCardAttachment;
+                string path = card + ".json";
+                path = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", path);
+                var adaptiveTourCardJson = File.ReadAllText(path);
+                var adaptiveTourCardAttachment = new Attachment()
+                {
+                    ContentType = "application/vnd.microsoft.card.adaptive",
+                    Content = JsonConvert.DeserializeObject(adaptiveTourCardJson),
+                };
+                carouselAttachments.Add(adaptiveTourCardAttachment);
+            }
+
+            return carouselAttachments;
         }
     }
 }
