@@ -11,7 +11,7 @@
               "type": "TextBlock",
               "size": "Medium",
               "weight": "Bolder",
-              "text": "Ask an Expert"
+              "text": "%AskAnExpertText1%"
             }
           ],
           "width": "stretch"
@@ -20,7 +20,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "Do you like to connect with our experts to know better about our services.",
+      "text": "%AskAnExpertText2%",
       "wrap": true
     },
     {
@@ -29,24 +29,6 @@
       "style": "Person",
       "url": "https://cdn4.iconfinder.com/data/icons/education-4-21/66/160-512.png",
       "size": "Large"
-    }
-  ],
-  "actions": [
-    {
-      "type": "Action.ShowCard",
-      "title": "Ask an Expert",
-      "card": {
-        "type": "AdaptiveCard",
-        "style": "emphasis",
-        "body": [
-          {
-            "type": "Input.Date",
-            "id": "dueDate"
-          }
-        ],
-
-        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
-      }
     }
   ],
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",

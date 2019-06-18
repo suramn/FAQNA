@@ -11,7 +11,7 @@ namespace FAQNABOT
     using Newtonsoft.Json;
 
     /// <summary>
-    ///  This is a Calss Provides logic for Card Attachments.
+    ///  This is a Class Provides logic for Card Attachments.
     /// </summary>
     public class FAQNABotProvider
     {
@@ -38,9 +38,9 @@ namespace FAQNABOT
         {
             return new List<Attachment>()
             {
-                Carousel1.GetCard(),
-                Carousel2.GetCard(),
-                Carousel3.GetCard(),
+                FunctionalCard.GetCard(),
+                AskAnExpert.GetCard(),
+                ShareFeedback.GetCard(),
             };
         }
     }

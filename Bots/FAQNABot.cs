@@ -12,7 +12,7 @@ namespace FAQNABOT.Bots
     using Microsoft.Bot.Schema;
 
     /// <summary>
-    ///  This Class Invokes all Bot Conversation functionalites.
+    ///  This Class Invokes all Bot Conversation functionalities.
     /// </summary>
     public class FAQNABot : ActivityHandler
     {
@@ -44,7 +44,7 @@ namespace FAQNABOT.Bots
         /// <summary>
         /// The method that gets invoked when the bot is first opened after installation.
         /// </summary>
-        /// <param name="membersAdded">The account that has been eiter added or interacting with the bot.</param>
+        /// <param name="membersAdded">The account that has been either added or interacting with the bot.</param>
         /// <param name="turnContext">The current turn/execution flow.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A unit of Execution.</returns>
@@ -70,7 +70,7 @@ namespace FAQNABOT.Bots
         /// <param name="context">The current turn/execution flow.</param>
         /// <param name="text">Parses the text from user conversation.</param>
         /// <param name="cancellationToken">The cancellation Token.</param>
-        /// <returns>Approrpriate Card.</returns>
+        /// <returns>Appropriate Card.</returns>
         private async Task<List<Attachment>> GetCards(ITurnContext context, string text, CancellationToken cancellationToken)
         {
             var faqnaBotProvider = new FAQNABotProvider();

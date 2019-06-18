@@ -32,4 +32,3 @@ C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.AssemblyIn
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.RazorTargetAssemblyInfo.cache
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.dll
 C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.pdb
-C:\Users\v-nesura\source\repos\FAQNA\obj\Debug\netcoreapp2.1\FAQNABOT.csprojAssemblyReference.cache

@@ -22,9 +22,9 @@ namespace FAQNABOT.AdaptiveCardHelpers
         }
 
         /// <summary>
-        /// This method performs a function that helps with localisation using Resx.
+        /// This method performs a function that helps with localization using Resx file.
         /// </summary>
-        /// <returns>Card attachement as Json stirng.</returns>
+        /// <returns>Card attachment as Json string.</returns>
         public static string GetCard()
         {
             var botName = Resource.BotName;
