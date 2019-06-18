@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "140511724ed8ec228537c4afe5177cfcc9b953cf"
+    "signature": "875c3a4de7321a35048fdb086581fafccd18711d"
   },
   "compilationOptions": {
     "defines": [
@@ -26,6 +26,7 @@
         "dependencies": {
           "AdaptiveCards": "1.2.0",
           "Bot.Builder.Community.Dialogs.FormFlow": "4.3.48",
+          "Microsoft.ApplicationInsights": "2.10.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.Bot.Builder.Integration.AspNet.Core": "4.4.3",
           "Microsoft.NETCore.App": "2.1.0",
@@ -115,6 +116,21 @@
         },
         "compile": {
           "lib/netstandard2.0/Bot.Builder.Community.Dialogs.FormFlow.dll": {}
+        }
+      },
+      "Microsoft.ApplicationInsights/2.10.0": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "4.5.0",
+          "System.Runtime.InteropServices": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ApplicationInsights.dll": {
+            "assemblyVersion": "2.10.0.0",
+            "fileVersion": "2.10.0.31626"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ApplicationInsights.dll": {}
         }
       },
       "Microsoft.Bot.Builder/4.4.3": {
@@ -3554,6 +3570,13 @@
       "sha512": "sha512-IJjQVRhleyAn/tS+ThteMQa46WGZsbG6QlpSPDuq9ItzOX5i14WDNKE9kQlDgRdj9zxFxwhCh3bjpGj4YZOOeg==",
       "path": "bot.builder.community.dialogs.formflow/4.3.48",
       "hashPath": "bot.builder.community.dialogs.formflow.4.3.48.nupkg.sha512"
+    },
+    "Microsoft.ApplicationInsights/2.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qwWKmevApRZmNUqSTiISgcGXkxnS7pxJGiqPkQT2LbrWKQr/CqjbIgzuXXkyHhvOfY39Cw7ZLmIltKbTmIFzig==",
+      "path": "microsoft.applicationinsights/2.10.0",
+      "hashPath": "microsoft.applicationinsights.2.10.0.nupkg.sha512"
     },
     "Microsoft.Bot.Builder/4.4.3": {
       "type": "package",

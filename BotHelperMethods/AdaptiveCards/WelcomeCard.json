@@ -4,12 +4,7 @@
     {
       "type": "Container",
       "items": [
-        {
-          "type": "TextBlock",
-          "size": "Small",
-          "text": "%BotName%",
-          "isSubtle": true
-        },
+        
         {
           "type": "TextBlock",
           "spacing": "None",

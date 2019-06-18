@@ -4,6 +4,39 @@
         <name>FAQNABOT</name>
     </assembly>
     <members>
+        <member name="T:FAQNABOT.BotHelperMethods.AdaptiveCards.AskAnExpert">
+            <summary>
+             This class process an Carousel AskAnExpert card.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.BotHelperMethods.AdaptiveCards.AskAnExpert.GetCard">
+            <summary>
+            This method performs a function that helps with localisation using Resx.
+            </summary>
+            <returns>Card attachement as Json stirng.</returns>
+        </member>
+        <member name="T:FAQNABOT.BotHelperMethods.AdaptiveCards.FunctionalCard">
+            <summary>
+             This class process an Carousel Function Card.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.BotHelperMethods.AdaptiveCards.FunctionalCard.GetCard">
+            <summary>
+            This method performs a function that helps with localisation using Resx.
+            </summary>
+            <returns>Card attachement as Json stirng.</returns>
+        </member>
+        <member name="T:FAQNABOT.BotHelperMethods.AdaptiveCards.ShareFeedback">
+            <summary>
+             This class process an Carousel ShareFeedback Card.
+            </summary>
+        </member>
+        <member name="M:FAQNABOT.BotHelperMethods.AdaptiveCards.ShareFeedback.GetCard">
+            <summary>
+            This method performs a function that helps with localisation using Resx.
+            </summary>
+            <returns>Card attachement as Json stirng.</returns>
+        </member>
         <member name="T:FAQNABOT.AdaptiveCardHelpers.WelcomeCard">
             <summary>
              This class process an Welcome Card function.
@@ -37,7 +70,7 @@
             <param name="cancellationToken">The cancellation token.</param>
             <returns>A unit of Execution.</returns>
         </member>
-        <member name="M:FAQNABOT.Bots.FAQNABot.GetMessageFromText(Microsoft.Bot.Builder.ITurnContext,System.String,System.Threading.CancellationToken)">
+        <member name="M:FAQNABOT.Bots.FAQNABot.GetCards(Microsoft.Bot.Builder.ITurnContext,System.String,System.Threading.CancellationToken)">
             <summary>
             Sends the Appropriate Adaptive Card to the user parsing the text.
             </summary>
@@ -88,9 +121,9 @@
             </summary>
             <returns>The Welcome Adaptive card.</returns>
         </member>
-        <member name="M:FAQNABOT.FAQNABotProvider.CreateTourCardAttachment">
+        <member name="M:FAQNABOT.FAQNABotProvider.CreateTourCardCarouselAttachment">
             <summary>
-            Creates the adaptive card for Tour Functionality.
+            Displays Carousel of Tour Cards.
             </summary>
             <returns>The Tour Adaptive card.</returns>
         </member>
@@ -128,6 +161,21 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:FAQNABOT.Properties.Resource.AskAnExpertFunctionText">
+            <summary>
+              Looks up a localized string similar to You can always ask me to connect to an expert, an expert will connect with you:\n Ask an Expert..
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.AskAnExpertText1">
+            <summary>
+              Looks up a localized string similar to Ask An Expert.
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.AskAnExpertText2">
+            <summary>
+              Looks up a localized string similar to We have our experts to assist you better  on any of your questions.\nYou can always say:\nAsk an Expert.
+            </summary>
+        </member>
         <member name="P:FAQNABOT.Properties.Resource.BotName">
             <summary>
               Looks up a localized string similar to FAQ Bot.
@@ -138,6 +186,41 @@
               Looks up a localized string similar to - 401k\r- Travel Benifits\r-  Leave Policy\r- Health Benifits.
             </summary>
         </member>
+        <member name="P:FAQNABOT.Properties.Resource.BulletedQuestionText">
+            <summary>
+              Looks up a localized string similar to - May I know my 401k policy?\n- May I know the Travel Policy of the org?\n-  What about the Leave Policy?\n- What are the Health benefits?.
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.CollectFeedback">
+            <summary>
+              Looks up a localized string similar to Answer the questions suggesting how we can improve our services or just leave the comments..
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.FeedbackText1">
+            <summary>
+              Looks up a localized string similar to We Would love to hear a feedback from you on how we have performed today..
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.FeedbackText2">
+            <summary>
+              Looks up a localized string similar to If your experience is unhappy give us the details you have for your question,like your assigned ticket #, one of our experts will connect with you..
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.FunctionCardText1">
+            <summary>
+              Looks up a localized string similar to Hello!.I am your friendly HR Question and Answer BOT. \nType anything related to HR topics and see how I answer them back..
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.FunctionCardText2">
+            <summary>
+              Looks up a localized string similar to You can ask me questions on the following topics and I will assist you in answering them..
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.FunctionTopicsText">
+            <summary>
+              Looks up a localized string similar to Ask me questions  like:.
+            </summary>
+        </member>
         <member name="P:FAQNABOT.Properties.Resource.MessageText1">
             <summary>
               Looks up a localized string similar to Here is what I can help you with:.
@@ -146,6 +229,11 @@
         <member name="P:FAQNABOT.Properties.Resource.MessageText2">
             <summary>
               Looks up a localized string similar to If you are curious about what I can do, just type @FAQBot and I will present the list of commands that I can understand..
+            </summary>
+        </member>
+        <member name="P:FAQNABOT.Properties.Resource.ShareFeedbackTitleText">
+            <summary>
+              Looks up a localized string similar to Share Feedback.
             </summary>
         </member>
         <member name="P:FAQNABOT.Properties.Resource.TakeATourButtonText">

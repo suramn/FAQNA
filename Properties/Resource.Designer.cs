@@ -61,6 +61,33 @@ namespace FAQNABOT.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can always ask me to connect to an expert, an expert will connect with you:\n Ask an Expert..
+        /// </summary>
+        public static string AskAnExpertFunctionText {
+            get {
+                return ResourceManager.GetString("AskAnExpertFunctionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask An Expert.
+        /// </summary>
+        public static string AskAnExpertText1 {
+            get {
+                return ResourceManager.GetString("AskAnExpertText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We have our experts to assist you better  on any of your questions.\nYou can always say:\nAsk an Expert.
+        /// </summary>
+        public static string AskAnExpertText2 {
+            get {
+                return ResourceManager.GetString("AskAnExpertText2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FAQ Bot.
         /// </summary>
         public static string BotName {
@@ -79,6 +106,69 @@ namespace FAQNABOT.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to - May I know my 401k policy?\n- May I know the Travel Policy of the org?\n-  What about the Leave Policy?\n- What are the Health benefits?.
+        /// </summary>
+        public static string BulletedQuestionText {
+            get {
+                return ResourceManager.GetString("BulletedQuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Answer the questions suggesting how we can improve our services or just leave the comments..
+        /// </summary>
+        public static string CollectFeedback {
+            get {
+                return ResourceManager.GetString("CollectFeedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We Would love to hear a feedback from you on how we have performed today..
+        /// </summary>
+        public static string FeedbackText1 {
+            get {
+                return ResourceManager.GetString("FeedbackText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If your experience is unhappy give us the details you have for your question,like your assigned ticket #, one of our experts will connect with you..
+        /// </summary>
+        public static string FeedbackText2 {
+            get {
+                return ResourceManager.GetString("FeedbackText2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello!.I am your friendly HR Question and Answer BOT. \nType anything related to HR topics and see how I answer them back..
+        /// </summary>
+        public static string FunctionCardText1 {
+            get {
+                return ResourceManager.GetString("FunctionCardText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can ask me questions on the following topics and I will assist you in answering them..
+        /// </summary>
+        public static string FunctionCardText2 {
+            get {
+                return ResourceManager.GetString("FunctionCardText2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask me questions  like:.
+        /// </summary>
+        public static string FunctionTopicsText {
+            get {
+                return ResourceManager.GetString("FunctionTopicsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here is what I can help you with:.
         /// </summary>
         public static string MessageText1 {
@@ -93,6 +183,15 @@ namespace FAQNABOT.Properties {
         public static string MessageText2 {
             get {
                 return ResourceManager.GetString("MessageText2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share Feedback.
+        /// </summary>
+        public static string ShareFeedbackTitleText {
+            get {
+                return ResourceManager.GetString("ShareFeedbackTitleText", resourceCulture);
             }
         }
         

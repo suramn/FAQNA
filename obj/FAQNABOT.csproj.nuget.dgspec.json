@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[4.3.48, )"
             },
+            "Microsoft.ApplicationInsights": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",

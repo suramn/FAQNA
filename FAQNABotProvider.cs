@@ -3,20 +3,18 @@
 // </copyright>
 namespace FAQNABOT
 {
+    using System.Collections.Generic;
     using System.IO;
     using FAQNABOT.AdaptiveCardHelpers;
-    using FAQNABOT.Bots;
+    using FAQNABOT.BotHelperMethods.AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Newtonsoft.Json;
 
     /// <summary>
-    ///  This is a Calss Provides logic for Card Attachments.
+    ///  This is a Class Provides logic for Card Attachments.
     /// </summary>
     public class FAQNABotProvider
     {
-        private string welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
-        private string tour = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "TourCard.json");
-
         /// <summary>
         /// Creates the adaptive card for the team welcome message.
         /// </summary>
@@ -33,18 +31,17 @@ namespace FAQNABOT
         }
 
         /// <summary>
-        /// Creates the adaptive card for Tour Functionality.
+        /// Displays Carousel of Tour Cards.
         /// </summary>
         /// <returns>The Tour Adaptive card.</returns>
-        public Attachment CreateTourCardAttachment()
+        public List<Attachment> CreateTourCardCarouselAttachment()
         {
-            var adaptiveTourCardJson = File.ReadAllText(this.tour);
-            var adaptiveCardAttachment = new Attachment()
+            return new List<Attachment>()
             {
-                ContentType = "application/vnd.microsoft.card.adaptive",
-                Content = JsonConvert.DeserializeObject(adaptiveTourCardJson),
+                FunctionalCard.GetCard(),
+                AskAnExpert.GetCard(),
+                ShareFeedback.GetCard(),
             };
-            return adaptiveCardAttachment;
         }
     }
 }
