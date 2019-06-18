@@ -6,6 +6,7 @@ namespace FAQNABOT
     using System.Collections.Generic;
     using System.IO;
     using FAQNABOT.AdaptiveCardHelpers;
+    using FAQNABOT.BotHelperMethods.AdaptiveCards;
     using Microsoft.Bot.Schema;
     using Newtonsoft.Json;
 
@@ -14,8 +15,6 @@ namespace FAQNABOT
     /// </summary>
     public class FAQNABotProvider
     {
-        private static string welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
-
         /// <summary>
         /// Creates the adaptive card for the team welcome message.
         /// </summary>
@@ -34,25 +33,15 @@ namespace FAQNABOT
         /// <summary>
         /// Displays Carousel of Tour Cards.
         /// </summary>
-        /// <param name="cards">List of Carousel Cards.</param>
         /// <returns>The Tour Adaptive card.</returns>
-        public List<Attachment> CreateTourCardCarouselAttachment(List<string> cards)
+        public List<Attachment> CreateTourCardCarouselAttachment()
         {
-            var carouselAttachments = new List<Attachment>();
-            foreach (var card in cards)
+            return new List<Attachment>()
             {
-                string path = card + ".json";
-                path = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", path);
-                var adaptiveTourCardJson = File.ReadAllText(path);
-                var adaptiveTourCardAttachment = new Attachment()
-                {
-                    ContentType = "application/vnd.microsoft.card.adaptive",
-                    Content = JsonConvert.DeserializeObject(adaptiveTourCardJson),
-                };
-                carouselAttachments.Add(adaptiveTourCardAttachment);
-            }
-
-            return carouselAttachments;
+                Carousel1.GetCard(),
+                Carousel2.GetCard(),
+                Carousel3.GetCard(),
+            };
         }
     }
 }

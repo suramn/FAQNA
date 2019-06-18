@@ -26,20 +26,18 @@ namespace FAQNABOT.Bots
         {
             string text = string.IsNullOrEmpty(turnContext.Activity.Text) ? string.Empty : turnContext.Activity.Text.ToLower();
 
-            List<Attachment> nextMessage = null;
-
             if (!string.IsNullOrEmpty(text))
             {
-                nextMessage = await this.GetMessageFromText(turnContext, text, cancellationToken);
-            }
+                var cards = await this.GetCards(turnContext, text, cancellationToken);
 
-            if (nextMessage.Count > 1)
-            {
-                await turnContext.SendActivityAsync(MessageFactory.Carousel(nextMessage));
-            }
-            else
-            {
-                await turnContext.SendActivityAsync(MessageFactory.Attachment(nextMessage[0]));
+                if (cards.Count > 1)
+                {
+                    await turnContext.SendActivityAsync(MessageFactory.Carousel(cards));
+                }
+                else
+                {
+                    await turnContext.SendActivityAsync(MessageFactory.Attachment(cards));
+                }
             }
         }
 
@@ -50,7 +48,10 @@ namespace FAQNABOT.Bots
         /// <param name="turnContext">The current turn/execution flow.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A unit of Execution.</returns>
-        protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
+        protected override async Task OnMembersAddedAsync(
+                                                            IList<ChannelAccount> membersAdded,
+                                                            ITurnContext<IConversationUpdateActivity> turnContext,
+                                                            CancellationToken cancellationToken)
         {
             var faqnaBotProvider = new FAQNABotProvider();
             var cardAttachment = faqnaBotProvider.CreateWelcomeCardAttachment();
@@ -70,32 +71,19 @@ namespace FAQNABOT.Bots
         /// <param name="text">Parses the text from user conversation.</param>
         /// <param name="cancellationToken">The cancellation Token.</param>
         /// <returns>Approrpriate Card.</returns>
-        private async Task<List<Attachment>> GetMessageFromText(ITurnContext context, string text, CancellationToken cancellationToken)
+        private async Task<List<Attachment>> GetCards(ITurnContext context, string text, CancellationToken cancellationToken)
         {
-            List<Attachment> nextMessage = null;
             var faqnaBotProvider = new FAQNABotProvider();
-            if (text == "hi"
-                     || text == "hello"
-                     || text == "reset"
-                     || text == "start over"
-                     || text == "restart")
+
+            if (context.Activity.Text == "Take a tour")
             {
-                // starts the conversation all over again from the welcome message,
-                // since the user has decided to restart the bot
-                nextMessage = new List<Attachment>() { await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment()) };
-            }
-            else if (context.Activity.Text == "Take a tour")
-            {
-                var carouselCards = new List<string>() { "carousel1", "carousel2", "carousel3" };
-                nextMessage = await Task.Run(() => faqnaBotProvider.CreateTourCardCarouselAttachment(carouselCards));
+                return await Task.Run(() => faqnaBotProvider.CreateTourCardCarouselAttachment());
             }
             else
             {
                 await context.SendActivityAsync(MessageFactory.Text("Hey, I don't understand what you're saying, would you like to take a tour"), cancellationToken);
-                nextMessage = new List<Attachment>() { await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment()) };
+                return new List<Attachment>() { await Task.Run(() => faqnaBotProvider.CreateWelcomeCardAttachment()) };
             }
-
-            return nextMessage;
         }
     }
 }

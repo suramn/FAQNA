@@ -4,10 +4,23 @@
         <name>FAQNABOT</name>
     </assembly>
     <members>
-        <member name="T:FAQNABOT.BotHelperMethods.AdaptiveCards.CarouselCard">
+        <member name="M:FAQNABOT.BotHelperMethods.AdaptiveCards.Carousel1.GetCard">
             <summary>
-             This class process Carousel Tour Card function.
+            This method performs a function that helps with localisation using Resx.
             </summary>
+            <returns>Card attachement as Json stirng.</returns>
+        </member>
+        <member name="M:FAQNABOT.BotHelperMethods.AdaptiveCards.Carousel2.GetCard">
+            <summary>
+            This method performs a function that helps with localisation using Resx.
+            </summary>
+            <returns>Card attachement as Json stirng.</returns>
+        </member>
+        <member name="M:FAQNABOT.BotHelperMethods.AdaptiveCards.Carousel3.GetCard">
+            <summary>
+            This method performs a function that helps with localisation using Resx.
+            </summary>
+            <returns>Card attachement as Json stirng.</returns>
         </member>
         <member name="T:FAQNABOT.AdaptiveCardHelpers.WelcomeCard">
             <summary>
@@ -42,7 +55,7 @@
             <param name="cancellationToken">The cancellation token.</param>
             <returns>A unit of Execution.</returns>
         </member>
-        <member name="M:FAQNABOT.Bots.FAQNABot.GetMessageFromText(Microsoft.Bot.Builder.ITurnContext,System.String,System.Threading.CancellationToken)">
+        <member name="M:FAQNABOT.Bots.FAQNABot.GetCards(Microsoft.Bot.Builder.ITurnContext,System.String,System.Threading.CancellationToken)">
             <summary>
             Sends the Appropriate Adaptive Card to the user parsing the text.
             </summary>
@@ -93,11 +106,10 @@
             </summary>
             <returns>The Welcome Adaptive card.</returns>
         </member>
-        <member name="M:FAQNABOT.FAQNABotProvider.CreateTourCardCarouselAttachment(System.Collections.Generic.List{System.String})">
+        <member name="M:FAQNABOT.FAQNABotProvider.CreateTourCardCarouselAttachment">
             <summary>
             Displays Carousel of Tour Cards.
             </summary>
-            <param name="cards">List of Carousel Cards.</param>
             <returns>The Tour Adaptive card.</returns>
         </member>
         <member name="T:FAQNABOT.Program">

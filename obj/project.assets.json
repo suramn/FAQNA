@@ -76,6 +76,19 @@
           }
         }
       },
+      "Microsoft.ApplicationInsights/2.10.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "4.5.0",
+          "System.RunTime.InteropServices": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ApplicationInsights.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ApplicationInsights.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4698,6 +4711,25 @@
         "lib/netstandard2.0/pt-BR/Bot.Builder.Community.Dialogs.FormFlow.resources.dll",
         "lib/netstandard2.0/ru/Bot.Builder.Community.Dialogs.FormFlow.resources.dll",
         "lib/netstandard2.0/zh-Hans/Bot.Builder.Community.Dialogs.FormFlow.resources.dll"
+      ]
+    },
+    "Microsoft.ApplicationInsights/2.10.0": {
+      "sha512": "qwWKmevApRZmNUqSTiISgcGXkxnS7pxJGiqPkQT2LbrWKQr/CqjbIgzuXXkyHhvOfY39Cw7ZLmIltKbTmIFzig==",
+      "type": "package",
+      "path": "microsoft.applicationinsights/2.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.ApplicationInsights.dll",
+        "lib/net45/Microsoft.ApplicationInsights.xml",
+        "lib/net46/Microsoft.ApplicationInsights.dll",
+        "lib/net46/Microsoft.ApplicationInsights.xml",
+        "lib/netstandard1.3/Microsoft.ApplicationInsights.dll",
+        "lib/netstandard1.3/Microsoft.ApplicationInsights.xml",
+        "lib/netstandard2.0/Microsoft.ApplicationInsights.dll",
+        "lib/netstandard2.0/Microsoft.ApplicationInsights.xml",
+        "microsoft.applicationinsights.2.10.0.nupkg.sha512",
+        "microsoft.applicationinsights.nuspec"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -12550,6 +12582,7 @@
     ".NETCoreApp,Version=v2.1": [
       "AdaptiveCards >= 1.2.0",
       "Bot.Builder.Community.Dialogs.FormFlow >= 4.3.48",
+      "Microsoft.ApplicationInsights >= 2.10.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.Bot.Builder.Integration.AspNet.Core >= 4.4.3",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12605,6 +12638,10 @@
           "Bot.Builder.Community.Dialogs.FormFlow": {
             "target": "Package",
             "version": "[4.3.48, )"
+          },
+          "Microsoft.ApplicationInsights": {
+            "target": "Package",
+            "version": "[2.10.0, )"
           },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
