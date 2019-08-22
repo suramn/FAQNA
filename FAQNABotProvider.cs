@@ -4,18 +4,18 @@
 namespace FAQNABOT
 {
     using System.IO;
-    using FAQNABOT.AdaptiveCardHelpers;
+    using FAQNABOT.AdaptiveCards;
     using FAQNABOT.Bots;
     using Microsoft.Bot.Schema;
     using Newtonsoft.Json;
 
     /// <summary>
-    ///  This is a Calss Provides logic for Card Attachments.
+    ///  This is a Class Provides logic for Card Attachments.
     /// </summary>
     public class FAQNABotProvider
     {
-        private string welcome = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "WelcomeCard.json");
-        private string tour = Path.Combine(".", "BotHelperMethods", "AdaptiveCards", "TourCard.json");
+        private string welcome = Path.Combine(".", "AdaptiveCards", "WelcomeCard.json");
+        private string tour = Path.Combine(".", "AdaptiveCards", "TourCard.json");
 
         /// <summary>
         /// Creates the adaptive card for the team welcome message.

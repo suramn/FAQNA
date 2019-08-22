@@ -4,12 +4,12 @@
         <name>FAQNABOT</name>
     </assembly>
     <members>
-        <member name="T:FAQNABOT.AdaptiveCardHelpers.WelcomeCard">
+        <member name="T:FAQNABOT.AdaptiveCards.WelcomeCard">
             <summary>
              This class process an Welcome Card function.
             </summary>
         </member>
-        <member name="M:FAQNABOT.AdaptiveCardHelpers.WelcomeCard.GetCard">
+        <member name="M:FAQNABOT.AdaptiveCards.WelcomeCard.GetCard">
             <summary>
             This method performs a function that helps with localisation using Resx.
             </summary>
@@ -79,7 +79,7 @@
         </member>
         <member name="T:FAQNABOT.FAQNABotProvider">
             <summary>
-             This is a Calss Provides logic for Card Attachments.
+             This is a Class Provides logic for Card Attachments.
             </summary>
         </member>
         <member name="M:FAQNABOT.FAQNABotProvider.CreateWelcomeCardAttachment">

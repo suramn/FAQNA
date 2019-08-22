@@ -9,7 +9,7 @@ namespace FAQNABOT.Bots
     using System.IO;
     using System.Threading;
     using System.Threading.Tasks;
-    using FAQNABOT.AdaptiveCardHelpers;
+    using FAQNABOT.AdaptiveCards;
     using Microsoft.Bot.Builder;
     using Microsoft.Bot.Schema;
     using Newtonsoft.Json;

@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft. All rights reserved.
 // </copyright>
 
-namespace FAQNABOT.AdaptiveCardHelpers
+namespace FAQNABOT.AdaptiveCards
 {
     using System;
     using System.Collections.Generic;
