@@ -16,6 +16,12 @@
           "weight": "Bolder",
           "text": "%WelcomeText1%",
           "isSubtle": true
+        },   {
+          "type": "TextBlock",
+          "spacing": "None",
+          "weight": "Bolder",
+          "text": "%WelcomeText1%",
+          "isSubtle": true
         },
         {
           "type": "TextBlock",
